@@ -123,7 +123,7 @@ class Posts extends Controller{
            
          $this->view('posts/edit', $data);
 
-      }
+      } 
    
    }
 

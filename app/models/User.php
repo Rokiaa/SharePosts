@@ -1,5 +1,5 @@
 <?php 
-    class User{
+    class User extends Controller{
         private $db;
          public function __construct()
          {
@@ -19,6 +19,18 @@
              }
              else { return false; }
          }
+
+        public function getUsers(){
+            $this->db->query('SELECT * FROM shareposts.users');
+            // $this->db->query('SELECT *, 
+            // users.id as userId,
+            // users.name as userName,
+            // users.email as userEmail,
+            // FROM shareposts.users
+            // ');
+            $results = $this->db->resultSet();
+            return $results;
+        }
 
 
         // Login User
